@@ -1,21 +1,10 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: nginx-deployment
+  name: example-pod
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      nodeSelector:
-        mylabel: myvalue
-      containers:
-      - name: nginx
-        image: nginx:1.21
-        ports:
-        - containerPort: 80
+  containers:
+  - name: nginx
+    image: nginx
+  nodeSelector:
+    lbl: node1
