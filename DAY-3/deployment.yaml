@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apache-deployment
+  name: my-deployment
   labels:
     app: web
 spec:
@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: httpd
-        image: httpd
+        image: hkshitesh/kubedemo:1.0
